@@ -6,7 +6,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-300 lato-font uppercase font-medium text-gray-700 container mx-auto">
+    <div className="navbar lato-font uppercase font-medium text-gray-700 container mx-auto">
     <div className="navbar-start">
       <div className="dropdown">
         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -62,7 +62,7 @@ const Navbar = () => {
         <li className="text-gray-700 hover:text-[#FB5D5D]"><a>contact us</a></li>
       </ul>
     </div>
-    <div className="navbar-end flex gap-5 items-center">
+    <div className="navbar-end flex gap-2 lg:gap-5 items-center">
 
       <a href="#" className="font-semibold text-[#fb5d5d]">Sign in</a>
       <BsSearch className="text-gray-700 hover:text-[#fb5d5d]" size={20}/>
