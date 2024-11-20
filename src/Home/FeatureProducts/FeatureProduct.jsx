@@ -18,11 +18,11 @@ const FeatureProduct = () => {
   return (
     <div className='my-20'>
       <div>
-        <h2 className='text-[#FD6B64] font-bold text-3xl'>#feature_products</h2>
+        <h2 className='text-[#FD6B64] font-bold text-4xl'>#feature_products</h2>
         <div className='border-t border-gray-300 mt-6'></div>
 
         {/* map */}
-        <div className='grid grid-flow-col lg:grid-flow-row grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-10'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-10'>
         {
           products.map((product)=> <ProductCard key={product} product={product}/>)
         }

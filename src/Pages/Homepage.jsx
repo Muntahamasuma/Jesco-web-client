@@ -1,6 +1,7 @@
 import Banner from "../Home/Banner/Banner";
 import FeatureProduct from "../Home/FeatureProducts/FeatureProduct";
 import Navbar from "../Home/Navbar/Navbar";
+import Testimonial from "../Home/Testimonials/Testimonial";
 
 
 const Homepage = () => {
@@ -10,6 +11,7 @@ const Homepage = () => {
       <Banner/>
      <div className="container mx-auto">
      <FeatureProduct/>
+     <Testimonial/>
      </div>
     </div>
   );
