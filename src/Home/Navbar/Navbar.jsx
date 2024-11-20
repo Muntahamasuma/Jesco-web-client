@@ -29,10 +29,6 @@ const Navbar = () => {
           <li className="text-gray-700 hover:text-[#FB5D5D]"><Link>Home</Link></li>
           <li className="text-gray-700 hover:text-[#FB5D5D]">
             <Link>Shop</Link>
-            <ul className="p-2">
-              <li><Link>Submenu 1</Link></li>
-              <li><Link>Submenu 2</Link></li>
-            </ul>
           </li>
           <li className="text-gray-700 hover:text-[#FB5D5D]">
             <Link>blogs</Link>
@@ -47,13 +43,7 @@ const Navbar = () => {
       <ul className="space-x-10 menu-horizontal px-1">
         <li className="text-gray-700 hover:text-[#FB5D5D]"><a>Home</a></li>
         <li className="text-gray-700 hover:text-[#FB5D5D]">
-          <details>
-            <summary>Shop</summary>
-            <ul className="p-2">
-              <li><a>Submenu 1</a></li>
-              <li><a>Submenu 2</a></li>
-            </ul>
-          </details>
+            <Link>Shop</Link>
         </li>
         <li className="text-gray-700 hover:text-[#FB5D5D]">
           <Link>Blogs</Link>

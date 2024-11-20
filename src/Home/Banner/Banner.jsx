@@ -4,7 +4,7 @@ import "animate.css";
 
 const Banner = () => {
   return (
-    <div className="carousel w-full  h-screen justify-between late-font uppercase">
+    <div className="carousel w-full h-screen justify-between late-font uppercase">
       <div id="slide1" className="carousel-item relative w-full bg-[#FCF6F6]">
 
         <div className="flex flex-col lg:flex-row gap-3 items-center justify-around container mx-auto my-10">
