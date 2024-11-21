@@ -54,7 +54,7 @@ const Navbar = () => {
     </div>
     <div className="navbar-end flex gap-2 lg:gap-5 items-center">
 
-      <a href="#" className="font-semibold text-[#fb5d5d]">Sign in</a>
+      <Link to='/login' href="#" className="font-semibold text-[#fb5d5d]">Sign in</Link>
       <BsSearch className="text-gray-700 hover:text-[#fb5d5d]" size={20}/>
       <VscHeart className="text-gray-700 hover:text-[#fb5d5d]" size={24}/>
       <BsCartCheck className="text-gray-700 hover:text-[#fb5d5d]" size={22}/>
