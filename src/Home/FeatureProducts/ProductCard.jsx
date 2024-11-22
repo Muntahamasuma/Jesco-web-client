@@ -2,12 +2,16 @@ import React from 'react';
 import { MdOutlineStar } from 'react-icons/md';
 
 const ProductCard = ({product}) => {
+
+  const {title, review,price, discountAmount, image} =product
+  console.log(product)
+
   return (
     <div className="card">
   <figure>
     <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-      alt="Shoes" />
+      src={image}
+      alt="Shoes" className='object-cover h-[300px] w-full'/>
   </figure>
   <div className="card-body">
     <h2 className="flex gap-1 items-center">
@@ -18,8 +22,8 @@ const ProductCard = ({product}) => {
     <MdOutlineStar className='text-yellow-400' size={20}/>
       <div className="text-gray-400">(5 Review)</div>
     </h2>
-    <p className='text-xl'>Women's Elizabeth Coat</p>
-    <p className='font-bold'>$45.27</p>
+    <p className='text-xl'>{title}</p>
+    <p className='font-bold'>${price}</p>
     
   </div>
 </div>
