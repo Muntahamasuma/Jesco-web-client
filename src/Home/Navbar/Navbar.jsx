@@ -2,9 +2,13 @@ import { BsCartCheck, BsSearch } from "react-icons/bs";
 import { FiHeart } from "react-icons/fi";
 import { VscHeart } from "react-icons/vsc";
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
+import UserDropDown from "./UserDropDown";
 
 
 const Navbar = () => {
+  const {user} = useAuth();
+
   return (
     <div className="navbar lato-font uppercase font-medium text-gray-700 container mx-auto">
     <div className="navbar-start">
@@ -54,7 +58,9 @@ const Navbar = () => {
     </div>
     <div className="navbar-end flex gap-2 lg:gap-5 items-center">
 
-      <Link to='/login' href="#" className="font-semibold text-[#fb5d5d]">Sign in</Link>
+      {
+        user? <div className=""> <UserDropDown/> </div> : <Link to='/login' href="#" className="font-semibold text-[#fb5d5d]">Sign in</Link>
+      }
       <BsSearch className="text-gray-700 hover:text-[#fb5d5d]" size={20}/>
       <VscHeart className="text-gray-700 hover:text-[#fb5d5d]" size={24}/>
       <BsCartCheck className="text-gray-700 hover:text-[#fb5d5d]" size={22}/>
