@@ -30,11 +30,11 @@ const Navbar = () => {
         <ul
           tabIndex={0}
           className="space-x-10 dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-          <li className="text-gray-700 hover:text-[#FB5D5D]"><Link>Home</Link></li>
+          <li className="text-gray-700 hover:text-[#FB5D5D]"><Link to='/'>Home</Link></li>
           <li className="text-gray-700 hover:text-[#FB5D5D]">
-            <Link>Shop</Link>
+            <Link to='/shop'>Shop</Link>
           </li>
-          <li className="text-gray-700 hover:text-[#FB5D5D]"><Link>about us</Link></li>
+          <li className="text-gray-700 hover:text-[#FB5D5D]"><Link to='/aboutus'>about us</Link></li>
           <li className="text-gray-700 hover:text-[#FB5D5D]"><Link>contact us</Link></li>
         </ul>
       </div>

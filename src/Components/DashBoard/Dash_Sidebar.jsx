@@ -25,7 +25,13 @@ const sellerRoutes = [
 const Dash_Sidebar = () => {
   const {logout} = useAuth()
   const userData = useUserData();
-  // console.log(data)
+  // console.log(userData)
+  {
+    userData?.message === "No User Found" && (
+      <p className="text-red-500">User not found. Please check your account details.</p>
+    )
+  }
+  
 
   const handleLogout=()=>{
 logout()

@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const Signup = () => {
   const { createUser } = useAuth();
@@ -20,14 +22,23 @@ const Signup = () => {
     const wishlist = [];
 
     const userData = {email, role, status, wishlist};
-    // console.log(userData);
-    createUser(data.email, data.password)
-    .then(() => {
-      navigate("/");
+    console.log(userData);
+    createUser(data.email, data.password).then(()=>{
+      axios.post("http://localhost:5000/users", userData).then((res)=>{
+        console.log(res)
+        if(res.data.insertedId){
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Registration Successfull",
+            showConfirmButton: false,
+            timer: 1500
+          });
+          navigate("/");
+        }
+      })
+        
     })
-    .catch((error) => {
-      console.error(error);
-    });
   
   };
 

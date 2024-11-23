@@ -5,7 +5,7 @@ import { MdOutlineStar } from 'react-icons/md';
 const ProductCard = ({product}) => {
 
   const {title, review,price, discountAmount, image} =product
-  console.log(product)
+  // console.log(product)
 
   return (
     <div className="card">

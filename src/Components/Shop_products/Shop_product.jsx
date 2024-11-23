@@ -1,8 +1,22 @@
 import React from 'react';
 import { MdOutlineStar } from 'react-icons/md';
+import useUserData from '../../Hooks/useUserData';
+import axios from 'axios';
 
 const Shop_product = ({product}) => {
   const {title, review,price, discountAmount, image} =product
+
+  const userData = useUserData();
+  const userEmail = userData.email
+  // console.log(userEmail)
+
+  const handleWishlist = async () =>{
+    await axios.patch('http://localhost:5000/wishlist/add',{
+      userEmail: userEmail,
+      productId: product._id
+    })
+    .then((res)=> console.log(res.data))
+  }
   return (
     <div className="card">
   <figure>
@@ -22,7 +36,7 @@ const Shop_product = ({product}) => {
     <p className='text-xl'>{title}</p>
     <p className='font-bold'>${price}</p>
     <div className="flex justify-end">
-      <button className="btn bg-black hover:shadow-yellow-400 hover:shadow-md hover:text-black text-white rounded-full btn-sm">Buy Now</button>
+      <button onClick={handleWishlist} className="btn bg-black hover:shadow-yellow-400 hover:shadow-md hover:text-black text-white rounded-full btn-sm">Add to Wishlist</button>
     </div>
   </div>
 </div>

@@ -8,6 +8,9 @@ import AboutUs from "../Pages/AboutUs";
 import DashBorad from "../Layouts/Dash_layout/DashBorad";
 import Dash_overview from "../Pages/Dash_overview";
 import PrivateRoute from "./PrivateRoute";
+import SellerRoute from "./SellerRoute";
+import AddProduct from "../Components/Seller/AddProduct";
+import MyProducts from "../Components/Seller/MyProducts";
 
 export const router = createBrowserRouter([
   {
@@ -43,7 +46,16 @@ export const router = createBrowserRouter([
       {
         path:'/dashboard/overview',
         element: <Dash_overview/>
-      }
+      },
+      // seller routes
+      {
+        path:'/dashboard/myproducts',
+        element:<SellerRoute><MyProducts/></SellerRoute>
+      },
+      {
+        path:'/dashboard/addproducts',
+        element:<SellerRoute><AddProduct/></SellerRoute>
+      },
     ]
   }
 ]);
