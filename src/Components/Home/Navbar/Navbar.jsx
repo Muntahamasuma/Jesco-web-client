@@ -34,9 +34,6 @@ const Navbar = () => {
           <li className="text-gray-700 hover:text-[#FB5D5D]">
             <Link>Shop</Link>
           </li>
-          <li className="text-gray-700 hover:text-[#FB5D5D]">
-            <Link>blogs</Link>
-          </li>
           <li className="text-gray-700 hover:text-[#FB5D5D]"><Link>about us</Link></li>
           <li className="text-gray-700 hover:text-[#FB5D5D]"><Link>contact us</Link></li>
         </ul>
@@ -49,10 +46,7 @@ const Navbar = () => {
         <li className="text-gray-700 hover:text-[#FB5D5D]">
             <Link to='/shop'>Shop</Link>
         </li>
-        <li className="text-gray-700 hover:text-[#FB5D5D]">
-          <Link>Blogs</Link>
-        </li>
-        <li className="text-gray-700 hover:text-[#FB5D5D]"><a>about us</a></li>
+        <li className="text-gray-700 hover:text-[#FB5D5D]"><Link to='/aboutus'>about us</Link></li>
         <li className="text-gray-700 hover:text-[#FB5D5D]"><a>contact us</a></li>
       </ul>
     </div>
