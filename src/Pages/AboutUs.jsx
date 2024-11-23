@@ -15,7 +15,7 @@ const AboutUs = () => {
     <div className='lato-font text-[#3C3C60] text-center lg:text-left'>
       <h1 className="text-5xl ">About Us</h1>
       <p className="py-6 w-4/5">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius modjior tem incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniamyl quinol exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duisau irure dolor in reprehenderit in voluptate velit esse cillum dolore euhti fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+      Welcome to Jesco, your one-stop destination for all your shopping needs! We are an innovative e-commerce platform committed to providing a seamless and enjoyable online shopping experience. At Jesco, we believe in quality, variety, and customer satisfaction, which is why we bring you an extensive collection of products across categories to meet your every need.
       </p>
       <img src="https://i.ibb.co.com/WPVZSKt/image.png" alt="" />
       <Link to='/'><h2 className="text-[#FD466A] text-sm font-semibold underline lato-font text-center lg:text-left pt-10">Home</h2></Link>

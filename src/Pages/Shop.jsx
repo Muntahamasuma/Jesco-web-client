@@ -7,6 +7,7 @@ import FilterBar from "../Components/Shop_products/FilterBar";
 import Shop_product from "../Components/Shop_products/Shop_product";
 import Loading from "../Components/Loading/Loading";
 import { Link } from "react-router-dom";
+import Navbar from "../Components/Home/Navbar/Navbar";
 
 
 const Shop = () => {
@@ -24,7 +25,7 @@ const Shop = () => {
     const fetch = async () => {
       await axios
         .get(
-          `http://localhost:5000/all-products?title=${search}&page=${page}&limit=${6}&sort=${sort}&category=${category}`
+          `https://final-run-1-server.vercel.app/all-products?title=${search}&page=${page}&limit=${6}&sort=${sort}&category=${category}`
         )
         .then((res) => {
           setProducts(res.data.products);
@@ -60,6 +61,8 @@ const Shop = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="container mx-auto">
       <h2 className="text-3xl font-medium lato-font text-center mt-20">Shop Now</h2>
       <Link to='/'><h2 className="text-[#FD466A] text-sm font-semibold underline lato-font text-center mt-5">Home</h2></Link>
@@ -117,6 +120,7 @@ const Shop = () => {
         
       </div>
     </div>
+    </>
   );
 };
 

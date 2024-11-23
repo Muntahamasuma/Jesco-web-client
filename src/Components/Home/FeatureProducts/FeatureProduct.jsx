@@ -12,7 +12,7 @@ const FeatureProduct = () => {
     const fetch = async () => {
       axios
         .get(
-          `http://localhost:5000/addproducts`
+          `https://final-run-1-server.vercel.app/addproducts`
         )
         .then((res) => {
           setProducts(res.data.products);

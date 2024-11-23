@@ -53,7 +53,7 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="space-x-10 menu-horizontal px-1">
           <li className="text-gray-700 hover:text-[#FB5D5D]">
-            <a>Home</a>
+            <Link to='/'>Home</Link>
           </li>
           <li className="text-gray-700 hover:text-[#FB5D5D]">
             <Link to="/shop">Shop</Link>

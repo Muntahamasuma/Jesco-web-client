@@ -20,13 +20,10 @@ const Login = () => {
   }
   return (
     <div className="hero bg-base-200 min-h-screen">
-    <div className="hero-content">
-      <div className="text-center">
-        <h1 className="text-5xl font-bold">Login Now!</h1>
-        <p className="py-6 w-4/5">
-          Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-          quasi. In deleniti eaque aut repudiandae et a id nisi.
-        </p>
+    <div className="flex mx-auto">
+      <div className="">
+        <h1 className="text-5xl font-bold lato-font">Login Now!</h1>
+        <Link to='/'><h2 className="text-[#FD466A] text-sm font-semibold underline lato-font mt-5">Home</h2></Link>
       </div>
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
         <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
@@ -47,10 +44,9 @@ const Login = () => {
           {errors.password?.type === 'minLength' && (<span className='text-red-500 text-sm font-light'>Password must have at least 6 Characters</span>)}
           </div>
           <div className="form-control mt-6">
-            <button type='submit' className="btn btn-primary">Login</button>
+            <button type='submit' className="btn bg-[#FD466A]">Login</button>
           </div>
-          {/* <GoogleLogin/> */}
-        <p className='my-2 font-light text-sm'>New Here? <Link to ='/signup' className='text-primary font-medium'>Register</Link></p>
+        <p className='my-2 font-light text-sm'>New Here? <Link to ='/signup' className='text-[#FD466A] font-medium'>Register</Link></p>
         </form>
       </div>
     </div>

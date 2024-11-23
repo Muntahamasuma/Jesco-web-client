@@ -30,7 +30,7 @@ const AddProduct = () => {
 
     useEffect(()=>{
       const fetchData = async () =>{
-        axios.post("http://localhost:5000/addproducts", product,{
+        axios.post("https://final-run-1-server.vercel.app/addproducts", product,{
           headers:{
             authorization: `Bearer ${token}`,
           },

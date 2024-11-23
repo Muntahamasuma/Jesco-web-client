@@ -4,7 +4,7 @@ import useUserData from '../../Hooks/useUserData';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
-const Shop_product = ({product, isWishlist, setlatestData, latestData}) => {
+const Shop_product = ({product, isWishlist, setlatestData}) => {
   const {title, review,price, discountAmount, image} =product
 
   const userData = useUserData();
@@ -12,7 +12,7 @@ const Shop_product = ({product, isWishlist, setlatestData, latestData}) => {
   // console.log(userEmail)
 
   const handleWishlist = async () =>{
-    await axios.patch('http://localhost:5000/wishlist/add',{
+    await axios.patch('https://final-run-1-server.vercel.app/wishlist/add',{
       userEmail: userEmail,
       productId: product._id
     })
@@ -25,12 +25,13 @@ const Shop_product = ({product, isWishlist, setlatestData, latestData}) => {
           showConfirmButton: false,
           timer: 1500
         });
+        window.location.reload();
       }
     })
   };
 
   const handleRemoveWishlist = async () =>{
-    await axios.patch('http://localhost:5000/wishlist/remove',{
+    await axios.patch('https://final-run-1-server.vercel.app/wishlist/remove',{
       userEmail: userEmail,
       productId: product._id
     })
@@ -43,7 +44,8 @@ const Shop_product = ({product, isWishlist, setlatestData, latestData}) => {
           showConfirmButton: false,
           timer: 1500
         });
-        setlatestData(!latestData)
+        window.location.reload();
+        setlatestData((prev) => !prev);
       }
     })
   };

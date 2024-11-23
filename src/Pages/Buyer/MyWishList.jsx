@@ -15,7 +15,7 @@ const token = localStorage.getItem('access-token')
   useEffect(()=>{
 const fetchWishlist = async()=>{
   SetLoading(true);
-  await axios.get(`http://localhost:5000/wishlist/${userData._id}`, {
+  await axios.get(`https://final-run-1-server.vercel.app/wishlist/${userData._id}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -48,7 +48,11 @@ if(userData._id && token){
               ) : (
                 <div className="w-full min-h-screen grid lg:grid-cols-3 gap-6 mb-12 px-2 items-center">
                   {wishlist.map((product) => (
-                    <Shop_product key={product._id} product={product} isWishlist SetLatestData latestData/>
+                    <Shop_product 
+                    key={product._id} 
+                    product={product} 
+                    isWishlist 
+                    SetLatestData={SetLatestData}/>
                   ))}
                 </div>
               )}

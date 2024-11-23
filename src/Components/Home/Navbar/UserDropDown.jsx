@@ -6,6 +6,7 @@ const UserDropDown = () => {
 
   const handleLogout= () =>{
     logout();
+    window.location.reload()
   }
   return (
     <div className="dropdown dropdown-bottom dropdown-end">
