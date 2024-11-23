@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 const MyWishList = () => {
   const [wishlist, SetWishlist] = useState([]);
   const [loading, SetLoading] = useState(false);
+  const [latestData, SetLatestData] = useState(true);
 const userData = useUserData();
 const token = localStorage.getItem('access-token')
 
@@ -27,7 +28,7 @@ const fetchWishlist = async()=>{
 if(userData._id && token){
   fetchWishlist();
 }
-  },[token, userData._id])
+  },[token, userData._id, latestData])
 
   return (
     <div>
@@ -47,7 +48,7 @@ if(userData._id && token){
               ) : (
                 <div className="w-full min-h-screen grid lg:grid-cols-3 gap-6 mb-12 px-2 items-center">
                   {wishlist.map((product) => (
-                    <Shop_product key={product._id} product={product} />
+                    <Shop_product key={product._id} product={product} isWishlist SetLatestData latestData/>
                   ))}
                 </div>
               )}

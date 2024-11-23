@@ -4,7 +4,7 @@ import useUserData from '../../Hooks/useUserData';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
-const Shop_product = ({product}) => {
+const Shop_product = ({product, isWishlist, setlatestData, latestData}) => {
   const {title, review,price, discountAmount, image} =product
 
   const userData = useUserData();
@@ -27,7 +27,27 @@ const Shop_product = ({product}) => {
         });
       }
     })
-  }
+  };
+
+  const handleRemoveWishlist = async () =>{
+    await axios.patch('http://localhost:5000/wishlist/remove',{
+      userEmail: userEmail,
+      productId: product._id
+    })
+    .then((res)=> {
+      if(res.data.modifiedCount){
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Product Remove from your wishlist",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        setlatestData(!latestData)
+      }
+    })
+  };
+
   return (
     <div className="card">
   <figure>
@@ -46,9 +66,14 @@ const Shop_product = ({product}) => {
     </h2>
     <p className='text-xl'>{title}</p>
     <p className='font-bold'>${price}</p>
-    <div className="flex justify-end">
-      <button onClick={handleWishlist} className="btn bg-black hover:shadow-yellow-400 hover:shadow-md hover:text-black text-white rounded-full btn-sm">Add to Wishlist</button>
-    </div>
+    {
+      isWishlist? (<div className="flex justify-end">
+      <button onClick={handleRemoveWishlist} className="btn bg-red-400 text-white hover:shadow-yellow-400 hover:shadow-md hover:text-black rounded-full btn-sm">Remove From Wishlist</button>
+    </div>) :
+    (<div className="flex justify-end">
+    <button onClick={handleWishlist} className="btn bg-black hover:shadow-yellow-400 hover:shadow-md hover:text-black text-white rounded-full btn-sm">Add to Wishlist</button>
+  </div>)
+    }
   </div>
 </div>
   );

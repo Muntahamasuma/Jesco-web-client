@@ -1,9 +1,12 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Dash_Sidebar from '../../Components/DashBoard/Dash_Sidebar';
+import Navbar from '../../Components/Home/Navbar/Navbar';
 
 const DashBorad = () => {
   return (
+    <>
+    <Navbar/>
     <div className='grid lg:grid-cols-12'>
       <div className='col-span-2'>
         <Dash_Sidebar/>
@@ -12,6 +15,7 @@ const DashBorad = () => {
         <Outlet/>
       </div>
     </div>
+    </>
   );
 };
 
