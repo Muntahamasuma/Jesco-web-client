@@ -2,6 +2,7 @@ import React from 'react';
 import { MdOutlineStar } from 'react-icons/md';
 import useUserData from '../../Hooks/useUserData';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const Shop_product = ({product}) => {
   const {title, review,price, discountAmount, image} =product
@@ -15,7 +16,17 @@ const Shop_product = ({product}) => {
       userEmail: userEmail,
       productId: product._id
     })
-    .then((res)=> console.log(res.data))
+    .then((res)=> {
+      if(res.data.modifiedCount){
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Product added to your wishlist",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+    })
   }
   return (
     <div className="card">

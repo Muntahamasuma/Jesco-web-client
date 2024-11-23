@@ -22,16 +22,16 @@ const Shop = () => {
   useEffect(() => {
     setLoading(true);
     const fetch = async () => {
-      axios
+      await axios
         .get(
           `http://localhost:5000/all-products?title=${search}&page=${page}&limit=${6}&sort=${sort}&category=${category}`
         )
         .then((res) => {
           setProducts(res.data.products);
-          // console.log(res.data)
+          console.log(res.data)
           setUniqueCategory(res.data.categories);
           setTotalPages(Math.ceil(res.data.totalProducts/6));
-          // console.log(res.data.totalProducts)
+          console.log(res.data.totalProducts)
           setLoading(false);
         });
     };

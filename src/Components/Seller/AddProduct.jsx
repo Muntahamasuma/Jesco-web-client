@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth";
 import axios from "axios";
@@ -27,22 +27,31 @@ const AddProduct = () => {
     const product = { title, brand, price, stock, category,image, description, sellerEmail}
 
     const token = localStorage.getItem('access-token')
-    axios.post("http://localhost:4000/addproducts", product,{
-      headers:{
-        authorization: `Bearer ${token}`,
-      },
-    }).then((res)=>{
-      if(res.data.insertedId){
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Product added Successfull",
-          showConfirmButton: false,
-          timer: 1500
-        });
-        reset();
+
+    useEffect(()=>{
+      const fetchData = async () =>{
+        axios.post("http://localhost:5000/addproducts", product,{
+          headers:{
+            authorization: `Bearer ${token}`,
+          },
+        }).then((res)=>{
+          if(res.data.insertedId){
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Product added Successfull",
+              showConfirmButton: false,
+              timer: 1500
+            });
+            reset();
+          }
+        })
+      };
+      if(user._id && token){
+        fetchData();
       }
-    })
+    },[token, user._id])
+
   };
   return (
     <div className="">

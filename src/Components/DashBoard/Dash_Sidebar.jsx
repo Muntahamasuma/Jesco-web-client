@@ -7,6 +7,7 @@ import { MdOutlineInventory2 } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import useUserData from "../../Hooks/useUserData";
 import useAuth from "../../Hooks/useAuth";
+import { VscHeart } from "react-icons/vsc";
 
 const sellerRoutes = [
   {
@@ -22,6 +23,18 @@ const sellerRoutes = [
     icon:<AiOutlineProduct />
   }
 ]
+
+
+const buyerRoutes = [
+  {
+    id:1,
+    route:'/dashboard/wishlist',
+    title: "My Wishlist",
+    icon:<VscHeart />
+  },
+]
+
+
 const Dash_Sidebar = () => {
   const {logout} = useAuth()
   const userData = useUserData();
@@ -39,7 +52,7 @@ logout()
 
   return (
     <div className="bg-gray-100 border-r border-black h-screen px-8 py-16">
-      <h2 className="text-3xl font-bold mb-8">Gadget Shop</h2>
+      <h2 className="text-3xl font-bold mb-8 text-center">Jesco</h2>
       <ul className="flex flex-col gap-3">
         <li className="btn">
           <NavLink to="/dashboard/overview" className="flex gap-3 items-center">
@@ -49,6 +62,17 @@ logout()
         </li>
         {
           userData.role === "seller" && sellerRoutes.map((route)=>(
+            <li key={route.id} className="btn">
+            <NavLink to={route.route} className="flex gap-3 items-center">
+            <>{route.icon}</>
+            <p>{route.title}</p>
+            </NavLink>
+          </li>
+          ))
+        }
+        {/* buyer */}
+        {
+          userData.role === "buyer" && buyerRoutes.map((route)=>(
             <li key={route.id} className="btn">
             <NavLink to={route.route} className="flex gap-3 items-center">
             <>{route.icon}</>
