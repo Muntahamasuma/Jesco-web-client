@@ -2,8 +2,8 @@ import { BsCartCheck, BsSearch } from "react-icons/bs";
 import { FiHeart } from "react-icons/fi";
 import { VscHeart } from "react-icons/vsc";
 import { Link, NavLink } from "react-router-dom";
-import useAuth from "../../Hooks/useAuth";
 import UserDropDown from "./UserDropDown";
+import useAuth from "../../../Hooks/useAuth";
 
 
 const Navbar = () => {
@@ -47,7 +47,7 @@ const Navbar = () => {
       <ul className="space-x-10 menu-horizontal px-1">
         <li className="text-gray-700 hover:text-[#FB5D5D]"><a>Home</a></li>
         <li className="text-gray-700 hover:text-[#FB5D5D]">
-            <Link>Shop</Link>
+            <Link to='/shop'>Shop</Link>
         </li>
         <li className="text-gray-700 hover:text-[#FB5D5D]">
           <Link>Blogs</Link>

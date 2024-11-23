@@ -1,11 +1,8 @@
 import React from 'react';
 import { MdOutlineStar } from 'react-icons/md';
 
-const ProductCard = ({product}) => {
-
+const Shop_product = ({product}) => {
   const {title, review,price, discountAmount, image} =product
-  console.log(product)
-
   return (
     <div className="card">
   <figure>
@@ -24,10 +21,12 @@ const ProductCard = ({product}) => {
     </h2>
     <p className='text-xl'>{title}</p>
     <p className='font-bold'>${price}</p>
-    
+    <div className="flex justify-end">
+      <button className="btn bg-black hover:shadow-yellow-400 hover:shadow-md hover:text-black text-white rounded-full btn-sm">Buy Now</button>
+    </div>
   </div>
 </div>
   );
 };
 
-export default ProductCard;
+export default Shop_product;
