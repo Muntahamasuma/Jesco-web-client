@@ -8,6 +8,10 @@ User authentication using Firebase.
 
 Styled with Tailwind CSS for a modern and clean UI.
 
+## Live Link
+
+https://jesco-the-final-run.web.app/
+
 ## How to Run the Application Locally
 Clone the repository:
 bash
